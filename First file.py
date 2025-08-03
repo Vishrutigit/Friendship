@@ -1,37 +1,74 @@
-# We need the 'requests' library to make HTTP requests
-import requests
-# We use the 'json' library to pretty-print the result
-import json
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To My Dear Friend</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f6d365, #fda085);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      color: #333;
+    }
 
-def get_single_todo():
-    """
-    Makes a single API call to fetch one 'To-Do' item.
-    """
-    # 1. Define the URL of the API endpoint we want to call
-    api_url = "https://jsonplaceholder.typicode.com/todos/1"
-    
-    print(f"Making a request to: {api_url}")
+    .card {
+      background: #fff8f0;
+      padding: 40px;
+      max-width: 700px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
 
-    try:
-        # 2. Send an HTTP GET request to the URL
-        response = requests.get(api_url)
-        
-        # 3. Check if the request was successful (e.g., status code 200 OK)
-        # This will raise an error for bad responses (like 404 Not Found or 500 Server Error)
-        response.raise_for_status()
-        
-        # 4. Parse the JSON response text into a Python dictionary
-        data = response.json()
-        
-        # 5. Display the fetched data in a readable format
-        print("\n--- Success! Data received: ---")
-        print(json.dumps(data, indent=2))
+    h1 {
+      font-size: 2.8em;
+      color: #ff5e62;
+      margin-bottom: 10px;
+    }
 
-    except requests.exceptions.RequestException as e:
-        # This block will run if there's a network error or a bad status code
-        print(f"\n--- An error occurred: {e} ---")
+    p {
+      font-size: 1.3em;
+      line-height: 1.6em;
+      color: #444;
+      margin: 20px 0;
+    }
 
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+      font-size: 1.1em;
+      color: #777;
+    }
 
-# Run the function when the script is executed
-if __name__ == "__main__":
-    get_single_todo()
+    .emoji {
+      font-size: 2em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="emoji">💛👭🌼</div>
+    <h1>Happy Friendship Day!</h1>
+    <p>
+      Today isn’t just about celebrating friends —<br>
+      It's about celebrating my Ishita Kapoor.<br><br>
+
+      You’ve been my laughter on hard days, my calm in chaos, and my constant when everything else felt uncertain.  
+      Every memory we've created — from silly jokes to deep conversations — is a treasure I carry with me.  
+      <br><br>
+      Thank you for always being there for me. Thank you for staying, supporting, and showing up in ways only a true friend can.
+      I’m so lucky to have you in my life. 💫
+    </p>
+    <div class="signature">
+      With love, Vishruti :),<br>
+      Always your Bestie 🌻
+    </div>
+  </div>
+</body>
+</html>
